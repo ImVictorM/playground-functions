@@ -55,12 +55,17 @@ function highestCount(numbersArray) {
   return repetitionCount;
 }
 
-let teste = [9, 1, 2, 3, 9, 5, 7];
-console.log(highestCount(teste));
-
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  // Math.abs pega o valor absoluto
+  let cat1Distance = Math.abs(mouse - cat1);
+  let cat2Distance = Math.abs(mouse - cat2);
+  if (cat1Distance < cat2Distance) {
+    return 'cat1';
+  } else if (cat2Distance < cat1Distance){
+    return 'cat2';
+  }
+  return 'os gatos trombam e o rato foge';
 }
 
 // Desafio 8
