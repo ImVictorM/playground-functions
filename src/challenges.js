@@ -133,8 +133,24 @@ function decode(string) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, nome) {
+
+  // validação
+  if (array.length === 0) {
+    return 'Vazio!';
+  }
+
+  // ordenação do array
+
+  array = array.sort(); 
+  let objectArray = [];
+  for(let index = 0; index < array.length; index += 1) {
+    objectArray.push({
+      tech: array[index],
+      name: nome,
+    })
+  }
+  return objectArray;
 }
 
 module.exports = {
