@@ -84,15 +84,52 @@ function fizzBuzz(numbersArray) {
   }
   return stringsArray;
 }
-let teste = [2, 15, 7, 9, 45];
-console.log(fizzBuzz(teste));
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(string) {
+  let values = {
+    'a': 1,
+    'e': 2,
+    'i': 3,
+    'o': 4,
+    'u': 5,
+  }
+  let encodedMessage = '';
+  for(let index = 0; index < string.length; index += 1) {
+    for (let key in values) {
+      if (string[index] === key) {
+        encodedMessage += values[key];
+        break;
+      } 
+    }
+    if (encodedMessage[index] === undefined) {
+      encodedMessage += string[index];
+    }
+  }
+  return encodedMessage;
 }
-function decode() {
-  // seu código aqui
+
+function decode(string) {
+  let values = {
+    '1': 'a',
+    '2': 'e',
+    '3': 'i',
+    '4': 'o',
+    '5': 'u',
+  }
+  let decodedMessage = '';
+  for(let index = 0; index < string.length; index += 1) {
+    for (let key in values) {
+      if (string[index] === key) {
+        decodedMessage += values[key];
+        break;
+      } 
+    }
+    if (decodedMessage[index] === undefined) {
+      decodedMessage += string[index];
+    }
+  }
+  return decodedMessage;
 }
 
 // Desafio 10
