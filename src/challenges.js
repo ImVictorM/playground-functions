@@ -20,7 +20,7 @@ function splitSentence(string) {
 // Desafio 4
 function concatName(stringsArray) {
   let newString = '';
-  newString = stringsArray[stringsArray.length - 1] + ", " +stringsArray[0];
+  newString = stringsArray[stringsArray.length - 1] + ', ' + stringsArray[0];
   return newString;
 }
 
@@ -30,16 +30,33 @@ function footballPoints(wins, ties) {
   for (let count = 1; count <= wins; count += 1) {
     sum += 3; // 3 pontos por vitoria
   }
-  for(let count = 1; count <= ties; count += 1) {
+  for (let count = 1; count <= ties; count += 1) {
     sum += 1; // 1 ponto por empate
   }
   return sum;
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(numbersArray) {
+  let highestNumber = null;
+  for(let number of numbersArray) {
+    if (highestNumber === null) {
+     highestNumber = number;
+    } else if (number > highestNumber) {
+      highestNumber = number;
+    }
+  }
+  let repetitionCount = 0;
+  for(let index = 0; index < numbersArray.length; index += 1) {
+    if (highestNumber === numbersArray[index]) {
+      repetitionCount += 1;
+    }
+  }
+  return repetitionCount;
 }
+
+let teste = [9, 1, 2, 3, 9, 5, 7];
+console.log(highestCount(teste));
 
 // Desafio 7
 function catAndMouse() {
