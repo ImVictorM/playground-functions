@@ -39,15 +39,15 @@ function footballPoints(wins, ties) {
 // Desafio 6
 function highestCount(numbersArray) {
   let highestNumber = null;
-  for(let number of numbersArray) {
+  for (let number of numbersArray) {
     if (highestNumber === null) {
-     highestNumber = number;
+      highestNumber = number;
     } else if (number > highestNumber) {
       highestNumber = number;
     }
   }
   let repetitionCount = 0;
-  for(let index = 0; index < numbersArray.length; index += 1) {
+  for (let index = 0; index < numbersArray.length; index += 1) {
     if (highestNumber === numbersArray[index]) {
       repetitionCount += 1;
     }
@@ -62,7 +62,7 @@ function catAndMouse(mouse, cat1, cat2) {
   let cat2Distance = Math.abs(mouse - cat2);
   if (cat1Distance < cat2Distance) {
     return 'cat1';
-  } else if (cat2Distance < cat1Distance){
+  } else if (cat2Distance < cat1Distance) {
     return 'cat2';
   }
   return 'os gatos trombam e o rato foge';
@@ -71,7 +71,7 @@ function catAndMouse(mouse, cat1, cat2) {
 // Desafio 8
 function fizzBuzz(numbersArray) {
   let stringsArray = [];
-  for(let number of numbersArray) {
+  for (let number of numbersArray) {
     if (number % 3 === 0 && number % 5 === 0) {
       stringsArray.push('fizzBuzz');
     } else if (number % 3 === 0) {
@@ -95,12 +95,12 @@ function encode(string) {
     'u': 5,
   }
   let encodedMessage = '';
-  for(let index = 0; index < string.length; index += 1) {
+  for (let index = 0; index < string.length; index += 1) {
     for (let key in values) {
       if (string[index] === key) {
         encodedMessage += values[key];
         break;
-      } 
+      }
     }
     if (encodedMessage[index] === undefined) {
       encodedMessage += string[index];
@@ -118,12 +118,12 @@ function decode(string) {
     '5': 'u',
   }
   let decodedMessage = '';
-  for(let index = 0; index < string.length; index += 1) {
+  for (let index = 0; index < string.length; index += 1) {
     for (let key in values) {
       if (string[index] === key) {
         decodedMessage += values[key];
         break;
-      } 
+      }
     }
     if (decodedMessage[index] === undefined) {
       decodedMessage += string[index];
@@ -142,9 +142,9 @@ function techList(array, nome) {
 
   // ordenação do array
 
-  array = array.sort(); 
+  array = array.sort();
   let objectArray = [];
-  for(let index = 0; index < array.length; index += 1) {
+  for (let index = 0; index < array.length; index += 1) {
     objectArray.push({
       tech: array[index],
       name: nome,
