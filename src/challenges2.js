@@ -52,7 +52,7 @@ function hydrate(string) {
     match() -> faz uma busca pelo parâmetro
    */
 
-  let digitFinder = /\d+/g; 
+  let digitFinder = /\d+/g;
   let digitsArray = string.match(digitFinder);
   let sum = 0;
   for (let digit of digitsArray) {
@@ -67,7 +67,7 @@ function hydrate(string) {
 
   return finalMessage;
 }
-console.log(hydrate('1 cachaça, 5 cervejas e 1 copo de vinho'));
+
 
 module.exports = {
   generatePhoneNumber,
