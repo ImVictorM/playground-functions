@@ -56,7 +56,7 @@ function catAndMouse(mouse, cat1, cat2) {
   let cat2Distance = Math.abs(mouse - cat2);
   if (cat1Distance < cat2Distance) {
     return 'cat1';
-  } 
+  }
   if (cat2Distance < cat1Distance) {
     return 'cat2';
   }
@@ -65,26 +65,12 @@ function catAndMouse(mouse, cat1, cat2) {
 
 // Desafio 8
 function fizzBuzz(numbersArray) {
-  // let stringsArray = [];
-  // for (let number of numbersArray) {
-  //   if (number % 3 === 0 && number % 5 === 0) {
-  //     stringsArray.push('fizzBuzz');
-  //   } else if (number % 3 === 0) {
-  //     stringsArray.push('fizz');
-  //   } else if (number % 5 === 0) {
-  //     stringsArray.push('buzz');
-  //   } else {
-  //     stringsArray.push('bug!');
-  //   }
-  // }
   let stringsArray = [];
   for (let number of numbersArray) {
-    if (number % 3 === 0) {
-      if (number % 5 === 0) {
-        stringsArray.push('fizzBuzz');
-      } else {
-        stringsArray.push('fizz');
-      }
+    if (number % 3 === 0 && number % 5 === 0) {
+      stringsArray.push('fizzBuzz');
+    } else if (number % 3 === 0) {
+      stringsArray.push('fizz');
     } else if (number % 5 === 0) {
       stringsArray.push('buzz');
     } else {
@@ -97,46 +83,94 @@ console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
 function encode(string) {
-  let values = {
-    a: 1,
-    e: 2,
-    i: 3,
-    o: 4,
-    u: 5,
-  };
+  // let values = {
+  //   a: 1,
+  //   e: 2,
+  //   i: 3,
+  //   o: 4,
+  //   u: 5,
+  // };
+  // let encodedMessage = '';
+  // for (let index = 0; index < string.length; index += 1) {
+  //   for (let key in values) {
+  //     if (string[index] === key) {
+  //       encodedMessage += values[key];
+  //       break;
+  //     }
+  //   }
+  //   if (encodedMessage[index] === undefined) {
+  //     encodedMessage += string[index];
+  //   }
+  // }
+  // return encodedMessage;
   let encodedMessage = '';
   for (let index = 0; index < string.length; index += 1) {
-    for (let key in values) {
-      if (string[index] === key) {
-        encodedMessage += values[key];
+    switch (string[index]) {
+      case 'a':
+        encodedMessage += 1;
         break;
-      }
-    }
-    if (encodedMessage[index] === undefined) {
-      encodedMessage += string[index];
+      case 'e':
+        encodedMessage += 2;
+        break;
+      case 'i':
+        encodedMessage += 3;
+        break;
+      case 'o':
+        encodedMessage += 4;
+        break;
+      case 'u':
+        encodedMessage += 5;
+        break;
+      default:
+        encodedMessage += string[index];
+        break;
     }
   }
   return encodedMessage;
 }
 
 function decode(string) {
-  let values = {
-    1: 'a',
-    2: 'e',
-    3: 'i',
-    4: 'o',
-    5: 'u',
-  };
+  // let values = {
+  //   1: 'a',
+  //   2: 'e',
+  //   3: 'i',
+  //   4: 'o',
+  //   5: 'u',
+  // };
+  // let decodedMessage = '';
+  // for (let index = 0; index < string.length; index += 1) {
+  //   for (let key in values) {
+  //     if (string[index] === key) {
+  //       decodedMessage += values[key];
+  //       break;
+  //     }
+  //   }
+  //   if (decodedMessage[index] === undefined) {
+  //     decodedMessage += string[index];
+  //   }
+  // }
+  // return decodedMessage;
   let decodedMessage = '';
   for (let index = 0; index < string.length; index += 1) {
-    for (let key in values) {
-      if (string[index] === key) {
-        decodedMessage += values[key];
+    switch (string[index]) {
+      case '1':
+        decodedMessage += 'a';
         break;
-      }
-    }
-    if (decodedMessage[index] === undefined) {
-      decodedMessage += string[index];
+      case '2':
+        decodedMessage += 'e';
+        break;
+      case '3':
+        decodedMessage += 'i';
+        break;
+      case '4':
+        decodedMessage += 'o';
+        break;
+      case '5':
+        decodedMessage += 'u';
+        break;
+      default:
+        decodedMessage += string[index];
+        break;
     }
   }
   return decodedMessage;
