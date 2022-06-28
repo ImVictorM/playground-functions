@@ -4,18 +4,18 @@ function generatePhoneNumber(numbersArray) {
     return 'Array com tamanho incorreto.';
   }
 
-  for (let index = 0; index < numbersArray.length; index += 1) {
-    // validações
+  for (let index = 0; index < numbersArray.length; index += 1) { // validação
     if (numbersArray[index] < 0 || numbersArray[index] > 9) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
-    let numberCount = 0;
-    for (let number of numbersArray) {
-      if (number === numbersArray[index]) {
-        numberCount += 1;
-      }
-    }
-    if (numberCount >= 3) {
+  }
+
+  let count = {}; // contagem de cada numero
+  numbersArray.forEach((element) => {
+    count[element] = (count[element] || 0) + 1;
+  });
+  for (let key in count) { // validação
+    if (count[key] >= 3) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
   }
@@ -44,6 +44,7 @@ function triangleCheck(lineA, lineB, lineC) {
   }
   return true;
 }
+
 // Desafio 13
 function hydrate(string) {
   /* [COLINHA]
