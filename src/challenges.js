@@ -79,7 +79,6 @@ function fizzBuzz(numbersArray) {
   }
   return stringsArray;
 }
-console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
 function encode(string) {
@@ -142,16 +141,13 @@ function techList(array, nome) {
   if (array.length === 0) {
     return 'Vazio!';
   }
-
-  // ordenação do array
-
-  array = array.sort();
+  array = array.sort();// ordenação do array
   let objectArray = [];
   for (let index = 0; index < array.length; index += 1) {
     objectArray.push({
       tech: array[index],
       name: nome,
-    })
+    });
   }
   return objectArray;
 }

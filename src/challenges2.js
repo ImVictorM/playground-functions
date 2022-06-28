@@ -7,7 +7,7 @@ function generatePhoneNumber(numbersArray) {
   for (let index = 0; index < numbersArray.length; index += 1) {
     // validações
     if (numbersArray[index] < 0 || numbersArray[index] > 9) {
-      return 'não é possível gerar um número de telefone com esses valores'
+      return 'não é possível gerar um número de telefone com esses valores';
     }
     let numberCount = 0;
     for (let number of numbersArray) {
@@ -34,12 +34,12 @@ function generatePhoneNumber(numbersArray) {
   return phoneNumber;
 }
 
-
 // Desafio 12
 function triangleCheck(lineA, lineB, lineC) {
   if (lineA > (lineB + lineC) || lineB > (lineA + lineC) || lineC > (lineA + lineB)) {
     return false;
-  } else if (lineA < Math.abs(lineB - lineC) || lineB < Math.abs(lineA - lineC) || lineC < Math.abs(lineA - lineB)) {
+  }
+  if (lineA < Math.abs(lineB - lineC) || lineB < Math.abs(lineA - lineC) || lineC < Math.abs(lineA - lineB)) {
     return false;
   }
   return true;
@@ -60,14 +60,15 @@ function hydrate(string) {
   }
   let finalMessage = '';
   if (sum > 1) {
-    finalMessage += sum + ' copos de água';
+    finalMessage += sum;
+    finalMessage += ' copos de água';
   } else {
-    finalMessage += sum + ' copo de água';
+    finalMessage += sum;
+    finalMessage += ' copo de água';
   }
 
   return finalMessage;
 }
-
 
 module.exports = {
   generatePhoneNumber,
