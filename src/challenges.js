@@ -83,12 +83,12 @@ function fizzBuzz(numbersArray) {
 // Desafio 9
 function encode(string) {
   let values = {
-    'a': 1,
-    'e': 2,
-    'i': 3,
-    'o': 4,
-    'u': 5,
-  }
+    a: 1,
+    e: 2,
+    i: 3,
+    o: 4,
+    u: 5,
+  };
   let encodedMessage = '';
   for (let index = 0; index < string.length; index += 1) {
     for (let key in values) {
@@ -106,12 +106,12 @@ function encode(string) {
 
 function decode(string) {
   let values = {
-    '1': 'a',
-    '2': 'e',
-    '3': 'i',
-    '4': 'o',
-    '5': 'u',
-  }
+    1: 'a',
+    2: 'e',
+    3: 'i',
+    4: 'o',
+    5: 'u',
+  };
   let decodedMessage = '';
   for (let index = 0; index < string.length; index += 1) {
     for (let key in values) {
@@ -129,7 +129,6 @@ function decode(string) {
 
 // Desafio 10
 function techList(array, nome) {
-
   // validação
   if (array.length === 0) {
     return 'Vazio!';
