@@ -24,8 +24,7 @@ function concatName(stringsArray) {
   newString = newString.join(', ');
   return newString;
 }
-let teste = ['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'];
-console.log(concatName(teste))
+
 // Desafio 5
 function footballPoints(wins, ties) {
   let sum = 0;
@@ -40,14 +39,7 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(numbersArray) {
-  let highestNumber = null;
-  for (let number of numbersArray) {
-    if (highestNumber === null) {
-      highestNumber = number;
-    } else if (number > highestNumber) {
-      highestNumber = number;
-    }
-  }
+  let highestNumber = Math.max(...numbersArray);
   let repetitionCount = 0;
   for (let index = 0; index < numbersArray.length; index += 1) {
     if (highestNumber === numbersArray[index]) {
