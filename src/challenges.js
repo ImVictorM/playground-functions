@@ -83,94 +83,54 @@ console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
 function encode(string) {
-  // let values = {
-  //   a: 1,
-  //   e: 2,
-  //   i: 3,
-  //   o: 4,
-  //   u: 5,
-  // };
-  // let encodedMessage = '';
-  // for (let index = 0; index < string.length; index += 1) {
-  //   for (let key in values) {
-  //     if (string[index] === key) {
-  //       encodedMessage += values[key];
-  //       break;
-  //     }
-  //   }
-  //   if (encodedMessage[index] === undefined) {
-  //     encodedMessage += string[index];
-  //   }
-  // }
-  // return encodedMessage;
   let encodedMessage = '';
-  for (let index = 0; index < string.length; index += 1) {
-    switch (string[index]) {
-      case 'a':
-        encodedMessage += 1;
-        break;
-      case 'e':
-        encodedMessage += 2;
-        break;
-      case 'i':
-        encodedMessage += 3;
-        break;
-      case 'o':
-        encodedMessage += 4;
-        break;
-      case 'u':
-        encodedMessage += 5;
-        break;
-      default:
-        encodedMessage += string[index];
-        break;
+  for (let char of string) {
+    switch (char) {
+    case 'a':
+      encodedMessage += 1;
+      break;
+    case 'e':
+      encodedMessage += 2;
+      break;
+    case 'i':
+      encodedMessage += 3;
+      break;
+    case 'o':
+      encodedMessage += 4;
+      break;
+    case 'u':
+      encodedMessage += 5;
+      break;
+    default:
+      encodedMessage += char;
+      break;
     }
   }
   return encodedMessage;
 }
 
 function decode(string) {
-  // let values = {
-  //   1: 'a',
-  //   2: 'e',
-  //   3: 'i',
-  //   4: 'o',
-  //   5: 'u',
-  // };
-  // let decodedMessage = '';
-  // for (let index = 0; index < string.length; index += 1) {
-  //   for (let key in values) {
-  //     if (string[index] === key) {
-  //       decodedMessage += values[key];
-  //       break;
-  //     }
-  //   }
-  //   if (decodedMessage[index] === undefined) {
-  //     decodedMessage += string[index];
-  //   }
-  // }
-  // return decodedMessage;
   let decodedMessage = '';
-  for (let index = 0; index < string.length; index += 1) {
-    switch (string[index]) {
-      case '1':
-        decodedMessage += 'a';
-        break;
-      case '2':
-        decodedMessage += 'e';
-        break;
-      case '3':
-        decodedMessage += 'i';
-        break;
-      case '4':
-        decodedMessage += 'o';
-        break;
-      case '5':
-        decodedMessage += 'u';
-        break;
-      default:
-        decodedMessage += string[index];
-        break;
+  for (let char of string) {
+    switch (char) {
+    case '1':
+      decodedMessage += 'a';
+      break;
+    case '2':
+      decodedMessage += 'e';
+      break;
+    case '3':
+      decodedMessage += 'i';
+      break;
+    case '4':
+      decodedMessage += 'o';
+      break;
+    case '5':
+      decodedMessage += 'u';
+      break;
+    default:
+      decodedMessage += char;
+      break;
     }
   }
   return decodedMessage;
