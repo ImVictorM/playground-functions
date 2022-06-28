@@ -56,11 +56,11 @@ function catAndMouse(mouse, cat1, cat2) {
   let cat2Distance = Math.abs(mouse - cat2);
   if (cat1Distance < cat2Distance) {
     return 'cat1';
-  } 
-  if (cat2Distance < cat1Distance) {
+  } else if (cat2Distance < cat1Distance) {
     return 'cat2';
+  } else {
+    return 'os gatos trombam e o rato foge';
   }
-  return 'os gatos trombam e o rato foge';
 }
 
 // Desafio 8
