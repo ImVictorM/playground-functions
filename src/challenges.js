@@ -82,57 +82,35 @@ function fizzBuzz(numbersArray) {
 
 // Desafio 9
 function encode(string) {
-  let encodedMessage = '';
-  for (let char of string) {
-    switch (char) {
-    case 'a':
-      encodedMessage += 1;
-      break;
-    case 'e':
-      encodedMessage += 2;
-      break;
-    case 'i':
-      encodedMessage += 3;
-      break;
-    case 'o':
-      encodedMessage += 4;
-      break;
-    case 'u':
-      encodedMessage += 5;
-      break;
-    default:
-      encodedMessage += char;
-      break;
+  let charObj = {
+    a: 1,
+    e: 2,
+    i: 3,
+    o: 4,
+    u: 5,
+  };
+  for (let key in charObj) {
+    if (string.includes(key)) {
+      string = string.replaceAll(key, charObj[key]);
     }
   }
-  return encodedMessage;
+  return string;
 }
 
 function decode(string) {
-  let decodedMessage = '';
-  for (let char of string) {
-    switch (char) {
-    case '1':
-      decodedMessage += 'a';
-      break;
-    case '2':
-      decodedMessage += 'e';
-      break;
-    case '3':
-      decodedMessage += 'i';
-      break;
-    case '4':
-      decodedMessage += 'o';
-      break;
-    case '5':
-      decodedMessage += 'u';
-      break;
-    default:
-      decodedMessage += char;
-      break;
+  let charObj = {
+    1: 'a',
+    2: 'e',
+    3: 'i',
+    4: 'o',
+    5: 'u',
+  };
+  for (let key in charObj) {
+    if (string.includes(key)) {
+      string = string.replaceAll(key, charObj[key]);
     }
   }
-  return decodedMessage;
+  return string;
 }
 
 // Desafio 10
