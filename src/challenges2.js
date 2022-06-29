@@ -1,4 +1,4 @@
-function validacaoNumero(numbersArray) {
+function numberValidation(numbersArray) {
   for (let index = 0; index < numbersArray.length; index += 1) {
     if (numbersArray[index] < 0 || numbersArray[index] > 9) {
       return false;
@@ -6,7 +6,7 @@ function validacaoNumero(numbersArray) {
   }
   return true;
 }
-function validacaoRepeticao(numbersArray) {
+function repetitionValidation(numbersArray) {
   let countObj = {};
   numbersArray.forEach((element) => {
     countObj[element] = (countObj[element] || 0) + 1;
@@ -19,31 +19,31 @@ function validacaoRepeticao(numbersArray) {
   return true;
 }
 
-function validacaoTamanho(numbersArray) {
+function lengthValidation(numbersArray) {
   if (numbersArray.length !== 11) {
     return false;
   }
   return true;
 }
-function validacaoGeral(numbersArray) {
-  if (!validacaoTamanho(numbersArray)) {
+function generalValidation(numbersArray) {
+  if (!lengthValidation(numbersArray)) {
     return 'Array com tamanho incorreto.';
   }
-  if (!validacaoNumero(numbersArray) || !validacaoRepeticao(numbersArray)) {
+  if (!numberValidation(numbersArray) || !repetitionValidation(numbersArray)) {
     return 'não é possível gerar um número de telefone com esses valores';
   }
   return true;
 }
 // Desafio 11
 function generatePhoneNumber(numbersArray) {
-  let validacao = validacaoGeral(numbersArray);
-  if (validacao !== true) {
-    return validacao;
+  let validation = generalValidation(numbersArray);
+  if (validation !== true) {
+    return validation;
   }
 
   let toString = numbersArray.join('');
-  let grupo = toString.match(/(\d{2})(\d{5})(\d{4})/);
-  let phoneNumber = `(${grupo[1]}) ${grupo[2]}-${grupo[3]}`;
+  let group = toString.match(/(\d{2})(\d{5})(\d{4})/);
+  let phoneNumber = `(${group[1]}) ${group[2]}-${group[3]}`;
   return phoneNumber;
 }
 

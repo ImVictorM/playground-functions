@@ -62,7 +62,7 @@ function catAndMouse(mouse, cat1, cat2) {
   }
   return 'os gatos trombam e o rato foge';
 }
-function verificacao(number) {
+function check(number) {
   if (number % 3 === 0 && number % 5 === 0) {
     return 'fizzBuzz';
   }
@@ -78,11 +78,10 @@ function verificacao(number) {
 function fizzBuzz(numbersArray) {
   let stringsArray = [];
   for (let number of numbersArray) {
-    stringsArray.push(verificacao(number));
+    stringsArray.push(check(number));
   }
   return stringsArray;
 }
-console.log(fizzBuzz([2, 15, 7, 9, 45]));
 
 // Desafio 9
 function encode(string) {
